@@ -3,1267 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himalayan Ranger - Motorcycle Expeditions Since 2014</title>
+    <title>Himalayan Ranger | Conquer the Roof of the World</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
-    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        amber: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        },
-                        rust: {
-                            500: '#d9531e',
-                            600: '#b83f12',
-                        },
-                        slate: {
-                            850: '#111827',
-                            900: '#0f172a',
-                            950: '#070b14',
-                        }
+                        charcoal: '#121619',
+                        darkslate: '#1E252B',
+                        amber: '#D97706',
+                        burntorange: '#EA580C',
+                        mountainblue: '#1E3A8A',
+                        offwhite: '#F9FAFB'
                     },
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        heading: ['Teko', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-        
-        .hero-overlay {
-            background: linear-gradient(180deg, rgba(7, 11, 20, 0.4) 0%, rgba(7, 11, 20, 0.85) 75%, #070b14 100%);
-        }
-        
-        .card-blur {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        
-        .card-blur:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-        }
-        
-        .accent-gradient-text {
-            background: linear-gradient(135deg, #fbbf24 0%, #ea580c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .modal-active {
-            overflow: hidden;
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(18, 22, 25, 0.7), rgba(18, 22, 25, 0.85)), url('https://placehold.co/1920x1080/1e252b/ffffff?text=Himalayan+Ranger+Expedition') center/cover no-repeat;
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+<body class="bg-charcoal text-offwhite antialiased selection:bg-burntorange selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 card-blur border-b border-white/5" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-rust-600 flex items-center justify-center text-slate-950 text-2xl font-black shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-                        <i class="fa-solid font-black fa-compass"></i>
-                    </div>
-                    <div>
-                        <span class="font-heading text-3xl font-bold tracking-wider text-white uppercase block leading-none">Himalayan <span class="text-amber-500">Ranger</span></span>
-                        <span class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Est. 2014 • 5 Founding Bikers</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#about" class="text-slate-300 hover:text-amber-400 transition-colors">Our Origin</a>
-                    <a href="#founders" class="text-slate-300 hover:text-amber-400 transition-colors">The 5 Founders</a>
-                    <a href="#expeditions" class="text-slate-300 hover:text-amber-400 transition-colors">Expeditions</a>
-                    <a href="#planner" class="text-slate-300 hover:text-amber-400 transition-colors">Trip Calculator</a>
-                    <a href="#checklist" class="text-slate-300 hover:text-amber-400 transition-colors">Gear List</a>
-                    <a href="#gallery" class="text-slate-300 hover:text-amber-400 transition-colors">Trail Gallery</a>
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-charcoal/90 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full bg-burntorange flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-motorcycle"></i>
                 </div>
-
-                <!-- Call to Action Button -->
-                <div class="hidden md:flex items-center">
-                    <a href="#planner" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-rust-500 text-slate-950 font-bold text-sm hover:brightness-110 transition-all shadow-md shadow-amber-500/20 flex items-center gap-2">
-                        <i class="fa-solid fa-motorcycle"></i> Plan Expedition
-                    </a>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-wider uppercase text-offwhite">Himalayan <span class="text-burntorange">Ranger</span></span>
+                    <span class="text-xs text-gray-400 tracking-widest uppercase">Est. by Harpreet Singh</span>
                 </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-burntorange transition-colors">Our Story</a>
+                <a href="#expeditions" class="hover:text-burntorange transition-colors">Expeditions</a>
+                <a href="#gallery" class="hover:text-burntorange transition-colors">Gallery</a>
+                <a href="#gear" class="hover:text-burntorange transition-colors">Gear & Tips</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-burntorange hover:bg-amber text-white font-semibold shadow-md transition-all transform hover:-translate-y-0.5">Join the Club</a>
+            </nav>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-white focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
+            <button id="mobile-menu-btn" class="md:hidden text-offwhite text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkslate border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 hover:text-burntorange">Our Story</a>
+            <a href="#expeditions" class="block py-2 hover:text-burntorange">Expeditions</a>
+            <a href="#gallery" class="block py-2 hover:text-burntorange">Gallery</a>
+            <a href="#gear" class="block py-2 hover:text-burntorange">Gear & Tips</a>
+            <a href="#contact" class="inline-block mt-2 w-full text-center px-5 py-2.5 rounded-full bg-burntorange text-white font-semibold">Join the Club</a>
+        </div>
+    </header>
+
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center px-4 pt-20">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-darkslate/80 border border-gray-700 text-amber text-xs sm:text-sm font-semibold tracking-wider uppercase backdrop-blur-sm">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Founded by Harpreet Singh & Friends</span>
             </div>
-        </div>
-
-        <!-- Mobile Menu Nav Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden card-blur border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
-            <a href="#about" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">Our Origin</a>
-            <a href="#founders" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">The 5 Founders</a>
-            <a href="#expeditions" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">Expeditions</a>
-            <a href="#planner" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">Trip Calculator</a>
-            <a href="#checklist" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">Gear Prep</a>
-            <a href="#gallery" class="block text-slate-300 hover:text-amber-400 font-medium text-lg py-1">Trail Memories</a>
-            <a href="#planner" class="block text-center w-full py-3 rounded-xl bg-amber-500 text-slate-950 font-bold mt-4">Plan Your Ride</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2000&q=80" alt="Himalayan Mountain Trail" class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-1000">
-            <div class="absolute inset-0 hero-overlay"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full card-blur border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 shadow-xl">
-                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                5 Founding Rangers • 10+ Years of Himalayan High Pass Conquests
-            </div>
-
-            <!-- Title -->
-            <h1 class="font-heading text-5xl sm:text-7xl lg:text-9xl font-extrabold uppercase tracking-tight text-white leading-none mb-6">
-                Conquer The <span class="accent-gradient-text">Highest Passes</span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-tight">
+                Conquer The Roof Of <span class="text-burntorange underline decoration-amber">The World</span>
             </h1>
-
-            <p class="max-w-3xl mx-auto text-lg sm:text-xl text-slate-300 font-light leading-relaxed mb-10">
-                Forged in 2014 by five brotherhood riders. We lead thrill-seeking motorcycling rides into the untamed terrain of Ladakh, Nubra Valley, Pangong Tso, Spiti, and Zanskar.
+            <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+                Join the ultimate motorcycle riding brotherhood. Roar through untamed mountain passes, legendary high-altitude trails, and majestic Himalayan horizons.
             </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
-                <a href="#expeditions" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-rust-500 text-slate-950 font-extrabold text-lg hover:brightness-110 transition-all shadow-xl shadow-amber-500/25 flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-compass text-slate-950"></i> Explore 2025/2026 Expeditions
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#expeditions" class="w-full sm:w-auto px-8 py-4 rounded-full bg-burntorange hover:bg-amber text-white font-bold text-base tracking-wide shadow-xl transition-all transform hover:scale-105">
+                    Explore Upcoming Rides <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
-                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl card-blur border border-white/20 text-white font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3">
-                    <i class="fa-solid fa-shield-halved text-amber-400"></i> The Ranger Ethos
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-full bg-darkslate/80 hover:bg-darkslate border border-gray-700 text-white font-bold text-base tracking-wide backdrop-blur-sm transition-all">
+                    Our Brotherhood Story
                 </a>
             </div>
 
             <!-- Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-white/10">
-                <div class="p-4 rounded-xl card-blur">
-                    <span class="font-heading text-4xl sm:text-5xl font-bold text-amber-400 block">18,380 ft</span>
-                    <span class="text-xs uppercase tracking-wider text-slate-400">Highest Pass (Khardung La)</span>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-gray-800/80">
+                <div class="p-4 rounded-xl bg-darkslate/40 backdrop-blur border border-gray-800">
+                    <div class="text-3xl font-black text-burntorange">15,000+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">KM Explored</div>
                 </div>
-                <div class="p-4 rounded-xl card-blur">
-                    <span class="font-heading text-4xl sm:text-5xl font-bold text-amber-400 block">120+</span>
-                    <span class="text-xs uppercase tracking-wider text-slate-400">Expeditions Led</span>
+                <div class="p-4 rounded-xl bg-darkslate/40 backdrop-blur border border-gray-800">
+                    <div class="text-3xl font-black text-amber">18,380 ft</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Max Altitude</div>
                 </div>
-                <div class="p-4 rounded-xl card-blur">
-                    <span class="font-heading text-4xl sm:text-5xl font-bold text-amber-400 block">1,500+</span>
-                    <span class="text-xs uppercase tracking-wider text-slate-400">Riders Guided</span>
+                <div class="p-4 rounded-xl bg-darkslate/40 backdrop-blur border border-gray-800">
+                    <div class="text-3xl font-black text-mountainblue text-blue-400">120+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Active Rangers</div>
                 </div>
-                <div class="p-4 rounded-xl card-blur">
-                    <span class="font-heading text-4xl sm:text-5xl font-bold text-amber-400 block">100%</span>
-                    <span class="text-xs uppercase tracking-wider text-slate-400">Safety Track Record</span>
+                <div class="p-4 rounded-xl bg-darkslate/40 backdrop-blur border border-gray-800">
+                    <div class="text-3xl font-black text-emerald-500">100%</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-400 mt-1">Brotherhood</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Origin Story Section -->
-    <section id="about" class="py-24 relative bg-slate-950">
+    <section id="about" class="py-24 bg-darkslate relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                
-                <!-- Story Content -->
-                <div>
-                    <div class="inline-flex items-center gap-2 text-amber-400 font-bold uppercase text-xs tracking-widest mb-3">
-                        <i class="fa-solid fa-flag text-amber-500"></i> Since June 2014
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-burntorange font-bold uppercase tracking-widest text-sm">
+                        <i class="fa-solid fa-fire"></i>
+                        <span>The Genesis</span>
                     </div>
-                    <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase leading-none mb-6">
-                        Born from Brotherhood, <br><span class="text-amber-500">Forged in Iron & Snow</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
+                        Born from a campfire chat in the high passes
                     </h2>
-                    <p class="text-slate-300 text-lg mb-6 leading-relaxed">
-                        It started in the summer of 2014 when 5 close-knit rider friends set out with loaded Royal Enfield 350s, handwritten maps, and a simple passion: to conquer the treacherous dirt tracks of Ladakh and Nubra Valley on our own terms.
+                    <p class="text-gray-300 leading-relaxed font-light text-base sm:text-lg">
+                        <strong class="text-white font-semibold">Himalayan Ranger</strong> wasn't built in a corporate boardroom. It started on a chilly evening under a blanket of stars when <strong class="text-white font-semibold">Harpreet Singh</strong> and a small band of close friends decided that the majestic Himalayas deserved more than just tourists—they demanded respectful explorers on two wheels.
                     </p>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Over a decade later, <strong class="text-white">Himalayan Ranger</strong> has evolved into a premier adventure expedition club. Yet, our founding principle remains untouched: small ride groups, uncompromised mechanical back-up, medical support on high altitudes, and genuine camaraderie.
+                    <p class="text-gray-400 leading-relaxed font-light">
+                        United by grease under their fingernails, the roar of heavy-duty engines, and an unquenchable thirst for the unknown, they founded Himalayan Ranger. Today, it’s a tight-knit clan of passionate motorcyclists who navigate treacherous gravel tracks, freezing river crossings, and legendary mountain passes with camaraderie and mutual respect.
                     </p>
-
-                    <!-- Key Pillars -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 rounded-xl card-blur border-l-4 border-l-amber-500">
-                            <h4 class="font-bold text-white text-base mb-1"><i class="fa-solid fa-shield-heart text-amber-400 mr-2"></i> Oxygen & Medic Vehicles</h4>
-                            <p class="text-xs text-slate-400">Every group trip is flanked by a 4x4 support truck carrying medical-grade oxygen cylinder units and trained first responders.</p>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-burntorange/20 text-burntorange flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-compass text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Uncharted Routes</h4>
+                                <p class="text-xs text-gray-400 mt-1">Going beyond standard tourist circuits.</p>
+                            </div>
                         </div>
-                        <div class="p-4 rounded-xl card-blur border-l-4 border-l-rust-500">
-                            <h4 class="font-bold text-white text-base mb-1"><i class="fa-solid fa-wrench text-rust-500 mr-2"></i> Master Mechanic On Board</h4>
-                            <p class="text-xs text-slate-400">High altitudes test engines. Our lead mechanic ensures your machine never stalls at 15,000+ feet.</p>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-amber/20 text-amber flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-users text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Brotherhood First</h4>
+                                <p class="text-xs text-gray-400 mt-1">No rider left behind on any terrain.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Visual Imagery Collage -->
                 <div class="relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
-                        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1000&q=80" alt="Motorcycle rider in high mountain pass" class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-xl card-blur border border-white/10">
-                            <p class="text-amber-400 font-bold text-sm uppercase">Founding Ranger Motto</p>
-                            <p class="text-white font-serif italic text-lg mt-1">"The road ends where the real ride begins. Never leave a brother behind."</p>
+                    <div class="absolute -inset-2 bg-gradient-to-r from-burntorange to-amber rounded-2xl blur-lg opacity-30"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-gray-700 bg-charcoal shadow-2xl">
+                        <img src="https://placehold.co/800x600/121619/ffffff?text=Harpreet+Singh+and+Riders" alt="Harpreet Singh and Himalayan Ranger team" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/800x600/121619/ffffff?text=Himalayan+Ranger'">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-charcoal p-6">
+                            <span class="text-xs font-bold text-amber uppercase tracking-wider">Founder Spotlight</span>
+                            <h3 class="text-xl font-bold text-white mt-1">Harpreet Singh & Co.</h3>
+                            <p class="text-sm text-gray-300 mt-0.5">Leading expeditions through Ladakh, Spiti, and Zanskar.</p>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- The 5 Founding Rangers Section -->
-    <section id="founders" class="py-20 bg-slate-900/60 border-y border-white/5 relative">
+    <section id="expeditions" class="py-24 bg-charcoal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">The Core Five</span>
-                <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">Meet The Founding Rangers</h2>
-                <p class="text-slate-400 mt-3 text-base">The 5 visionary riders who founded Himalayan Ranger in 2014 and continue to lead our premier expeditions today.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                
-                <!-- Founder 1 -->
-                <div class="card-blur rounded-2xl p-5 text-center flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2">
-                    <div>
-                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg relative">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Captain Bikram Singh" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Bikram "Chief" Singh</h3>
-                        <p class="text-amber-400 text-xs font-semibold uppercase mt-0.5">Trail Captain & Founder</p>
-                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            12+ years navigating Himalayan routes. Veteran expedition strategist known for reading high altitude mountain weather patterns.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex justify-center gap-3 text-slate-400">
-                        <span class="text-[11px] bg-slate-800 px-2.5 py-1 rounded-full"><i class="fa-solid fa-motorcycle text-amber-500"></i> RE Himalayan 450</span>
-                    </div>
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2 text-amber font-bold uppercase tracking-widest text-sm">
+                    <i class="fa-solid fa-route"></i>
+                    <span>The Call of the Wild</span>
                 </div>
-
-                <!-- Founder 2 -->
-                <div class="card-blur rounded-2xl p-5 text-center flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2">
-                    <div>
-                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg relative">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Rahul Sharma" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Rahul "Scout" Sharma</h3>
-                        <p class="text-amber-400 text-xs font-semibold uppercase mt-0.5">Lead Navigator</p>
-                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            Pioneer of remote trail scouting in Zanskar & Spiti. Maps offline topographical waypoints for uncharted off-road tracks.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex justify-center gap-3 text-slate-400">
-                        <span class="text-[11px] bg-slate-800 px-2.5 py-1 rounded-full"><i class="fa-solid fa-compass text-amber-500"></i> BMW GS 850</span>
-                    </div>
-                </div>
-
-                <!-- Founder 3 -->
-                <div class="card-blur rounded-2xl p-5 text-center flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2">
-                    <div>
-                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg relative">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Karan Verma" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Karan "Wrench" Verma</h3>
-                        <p class="text-amber-400 text-xs font-semibold uppercase mt-0.5">Chief Mechanical Lead</p>
-                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            Can dismantle and rebuild a carburetor or EFI sensor on a freezing mountain edge at midnight. High altitude motor expert.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex justify-center gap-3 text-slate-400">
-                        <span class="text-[11px] bg-slate-800 px-2.5 py-1 rounded-full"><i class="fa-solid fa-wrench text-amber-500"></i> Hero Xpulse 200 4V</span>
-                    </div>
-                </div>
-
-                <!-- Founder 4 -->
-                <div class="card-blur rounded-2xl p-5 text-center flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2">
-                    <div>
-                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg relative">
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80" alt="Dr. Aris Thorne" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Dr. Samar "Doc" Gill</h3>
-                        <p class="text-amber-400 text-xs font-semibold uppercase mt-0.5">Safety & Altitude Medic</p>
-                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            Certified wilderness medical specialist focused on High Altitude Pulmonary Edema (HAPE) prevention and rider safety.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex justify-center gap-3 text-slate-400">
-                        <span class="text-[11px] bg-slate-800 px-2.5 py-1 rounded-full"><i class="fa-solid fa-kit-medical text-amber-500"></i> RE Bullet 500</span>
-                    </div>
-                </div>
-
-                <!-- Founder 5 -->
-                <div class="card-blur rounded-2xl p-5 text-center flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2">
-                    <div>
-                        <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-amber-500 shadow-lg relative">
-                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=300&q=80" alt="Dev Taneja" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Dev "Gear" Taneja</h3>
-                        <p class="text-amber-400 text-xs font-semibold uppercase mt-0.5">Logistics & Tech Lead</p>
-                        <p class="text-slate-400 text-xs mt-3 leading-relaxed">
-                            Manages wilderness permits, satellite comms, hotel/tent campsite bookings, and real-time GPS tracking for back-up units.
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex justify-center gap-3 text-slate-400">
-                        <span class="text-[11px] bg-slate-800 px-2.5 py-1 rounded-full"><i class="fa-solid fa-truck-monster text-amber-500"></i> Triumph Tiger 900</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Expeditions Explorer -->
-    <section id="expeditions" class="py-24 relative bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div>
-                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Selected Itineraries</span>
-                    <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">Iconic Himalayan Routes</h2>
-                </div>
-                <p class="text-slate-400 max-w-md mt-4 md:mt-0 text-sm">
-                    Handcrafted riding itineraries refined over 10+ years of high pass exploration. Pick your circuit below.
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">Upcoming Expeditions</h2>
+                <p class="text-gray-400 font-light text-base sm:text-lg">
+                    Gear up for grueling high-altitude tests of grit, endurance, and machine resilience. Secure your spot in our upcoming convoys.
                 </p>
             </div>
 
-            <!-- Expedition Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-                
-                <!-- Tour 1: Ladakh & Nubra Circuit -->
-                <div class="card-blur rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-amber-500/50 transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Expedition 1 -->
+                <div class="bg-darkslate rounded-2xl overflow-hidden border border-gray-800 hover:border-burntorange transition-all duration-300 group flex flex-col justify-between shadow-lg">
                     <div>
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?auto=format&fit=crop&w=800&q=80" alt="Ladakh Mountain Pass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-400 border border-amber-500/30">
-                                <i class="fa-solid fa-gauge-high mr-1"></i> Moderate-Hard
-                            </div>
-                            <div class="absolute bottom-4 left-4 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-white">
-                                <i class="fa-solid fa-mountain text-amber-500 mr-1"></i> Khardung La (17,982 ft)
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://placehold.co/600x400/1e252b/ffffff?text=Ladakh+High+Passes" alt="Ladakh Expedition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e252b/ffffff?text=Ladakh+Expedition'">
+                            <div class="absolute top-4 right-4 bg-burntorange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Challenging
                             </div>
                         </div>
-
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">The Great Ladakh & Nubra Circuit</h3>
-                            <p class="text-slate-400 text-sm mt-2 line-clamp-2">Leh - Khardung La - Nubra Valley Sand Dunes - Hunder - Diskit - Leh</p>
-
-                            <!-- Tour Stats Row -->
-                            <div class="grid grid-cols-3 gap-2 my-6 p-3 rounded-xl bg-slate-900/80 text-center border border-white/5">
-                                <div>
-                                    <span class="block text-xs text-slate-400">Duration</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-calendar-days text-amber-400 text-xs"></i> 8 Days</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Distance</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-route text-amber-400 text-xs"></i> 950 KM</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Max Altitude</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-mountain text-amber-400 text-xs"></i> 17,982 FT</span>
-                                </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-regular fa-calendar mr-1 text-amber"></i> July 12 - July 24</span>
+                                <span><i class="fa-solid fa-clock mr-1 text-amber"></i> 13 Days</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-burntorange transition-colors">Ladakh Khardung La & Pangong Odyssey</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed">
+                                Conquer Khardung La, handle water crossings at Shyok, and camp under the starry skies of Pangong Tso.
+                            </p>
+                            <div class="pt-2 border-t border-gray-800 flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Max Elevation: <strong class="text-white">18,380 ft</strong></span>
+                                <span class="text-amber font-semibold">Slots Left: 4</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="px-6 pb-6 pt-0 flex gap-3">
-                        <button onclick="openItineraryModal('ladakh')" class="flex-1 py-3 rounded-xl card-blur border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-list-ul mr-1 text-amber-400"></i> Day-by-Day Itinerary
-                        </button>
-                        <button onclick="prefillCalculator('Ladakh & Nubra Circuit')" class="px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm hover:brightness-110 transition-all">
-                            Book / Quote
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Ladakh Khardung La Odyssey')" class="w-full py-3 rounded-xl bg-burntorange hover:bg-amber text-white font-semibold text-sm transition-all shadow-md">
+                            Book Expedition Slot
                         </button>
                     </div>
                 </div>
 
-                <!-- Tour 2: Pangong & Changthang Trail -->
-                <div class="card-blur rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-amber-500/50 transition-all duration-300">
+                <!-- Expedition 2 -->
+                <div class="bg-darkslate rounded-2xl overflow-hidden border border-gray-800 hover:border-burntorange transition-all duration-300 group flex flex-col justify-between shadow-lg">
                     <div>
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&q=80" alt="Pangong Lake Ladakh" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-400 border border-amber-500/30">
-                                <i class="fa-solid fa-gauge-high mr-1"></i> Challenging
-                            </div>
-                            <div class="absolute bottom-4 left-4 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-white">
-                                <i class="fa-solid fa-water text-amber-500 mr-1"></i> Pangong Tso Lake (13,862 ft)
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://placehold.co/600x400/1e252b/ffffff?text=Spiti+Valley+Loop" alt="Spiti Valley Expedition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e252b/ffffff?text=Spiti+Valley+Loop'">
+                            <div class="absolute top-4 right-4 bg-amber text-charcoal text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Extreme
                             </div>
                         </div>
-
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Pangong Tso & Changthang Odyssey</h3>
-                            <p class="text-slate-400 text-sm mt-2 line-clamp-2">Leh - Chang La Pass - Pangong High Altitude Lake - Hanle Observatory - Tso Moriri</p>
-
-                            <!-- Tour Stats Row -->
-                            <div class="grid grid-cols-3 gap-2 my-6 p-3 rounded-xl bg-slate-900/80 text-center border border-white/5">
-                                <div>
-                                    <span class="block text-xs text-slate-400">Duration</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-calendar-days text-amber-400 text-xs"></i> 10 Days</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Distance</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-route text-amber-400 text-xs"></i> 1,250 KM</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Max Altitude</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-mountain text-amber-400 text-xs"></i> 17,590 FT</span>
-                                </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-regular fa-calendar mr-1 text-amber"></i> August 10 - August 20</span>
+                                <span><i class="fa-solid fa-clock mr-1 text-amber"></i> 11 Days</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-burntorange transition-colors">Spiti Valley Cold Desert Circuit</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed">
+                                Navigate treacherous hairpin bends through Kaza, Key Monastery, and the treacherous Kunzum Pass.
+                            </p>
+                            <div class="pt-2 border-t border-gray-800 flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Max Elevation: <strong class="text-white">15,061 ft</strong></span>
+                                <span class="text-amber font-semibold">Slots Left: 2</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="px-6 pb-6 pt-0 flex gap-3">
-                        <button onclick="openItineraryModal('pangong')" class="flex-1 py-3 rounded-xl card-blur border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-list-ul mr-1 text-amber-400"></i> Day-by-Day Itinerary
-                        </button>
-                        <button onclick="prefillCalculator('Pangong & Changthang Odyssey')" class="px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm hover:brightness-110 transition-all">
-                            Book / Quote
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Spiti Valley Cold Desert Circuit')" class="w-full py-3 rounded-xl bg-burntorange hover:bg-amber text-white font-semibold text-sm transition-all shadow-md">
+                            Book Expedition Slot
                         </button>
                     </div>
                 </div>
 
-                <!-- Tour 3: Spiti Valley Hardcore Trail -->
-                <div class="card-blur rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-amber-500/50 transition-all duration-300">
+                <!-- Expedition 3 -->
+                <div class="bg-darkslate rounded-2xl overflow-hidden border border-gray-800 hover:border-burntorange transition-all duration-300 group flex flex-col justify-between shadow-lg">
                     <div>
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80" alt="Spiti Valley" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-rust-500 border border-rust-500/30">
-                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Hardcore Off-Road
-                            </div>
-                            <div class="absolute bottom-4 left-4 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-white">
-                                <i class="fa-solid fa-crosshairs text-amber-500 mr-1"></i> Kunzum Pass & Chandratal Lake
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://placehold.co/600x400/1e252b/ffffff?text=Zanskar+Valley" alt="Zanskar Valley Expedition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e252b/ffffff?text=Zanskar+Valley'">
+                            <div class="absolute top-4 right-4 bg-mountainblue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Advanced
                             </div>
                         </div>
-
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Spiti Valley Off-Road Challenge</h3>
-                            <p class="text-slate-400 text-sm mt-2 line-clamp-2">Shimla - Kalpa - Kaza - Key Monastery - Hikkim - Kunzum La - Manali</p>
-
-                            <!-- Tour Stats Row -->
-                            <div class="grid grid-cols-3 gap-2 my-6 p-3 rounded-xl bg-slate-900/80 text-center border border-white/5">
-                                <div>
-                                    <span class="block text-xs text-slate-400">Duration</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-calendar-days text-amber-400 text-xs"></i> 9 Days</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Distance</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-route text-amber-400 text-xs"></i> 1,100 KM</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Max Altitude</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-mountain text-amber-400 text-xs"></i> 15,060 FT</span>
-                                </div>
+                        <div class="p-6 space-y-4">
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span><i class="fa-regular fa-calendar mr-1 text-amber"></i> September 5 - September 16</span>
+                                <span><i class="fa-solid fa-clock mr-1 text-amber"></i> 12 Days</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-burntorange transition-colors">Zanskar Gorge & Padum Trail</h3>
+                            <p class="text-gray-400 text-sm font-light leading-relaxed">
+                                Explore the newly accessible rugged tracks of the Zanskar region with seasoned Ranger guides.
+                            </p>
+                            <div class="pt-2 border-t border-gray-800 flex items-center justify-between text-sm">
+                                <span class="text-gray-400">Max Elevation: <strong class="text-white">14,400 ft</strong></span>
+                                <span class="text-amber font-semibold">Slots Left: 5</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="px-6 pb-6 pt-0 flex gap-3">
-                        <button onclick="openItineraryModal('spiti')" class="flex-1 py-3 rounded-xl card-blur border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-list-ul mr-1 text-amber-400"></i> Day-by-Day Itinerary
+                    <div class="p-6 pt-0">
+                        <button onclick="openModal('Zanskar Gorge & Padum Trail')" class="w-full py-3 rounded-xl bg-burntorange hover:bg-amber text-white font-semibold text-sm transition-all shadow-md">
+                            Book Expedition Slot
                         </button>
-                        <button onclick="prefillCalculator('Spiti Valley Off-Road Challenge')" class="px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm hover:brightness-110 transition-all">
-                            Book / Quote
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Tour 4: Untamed Zanskar Expedition -->
-                <div class="card-blur rounded-2xl overflow-hidden flex flex-col justify-between group border border-white/10 hover:border-amber-500/50 transition-all duration-300">
-                    <div>
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Zanskar Valley Pass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-4 right-4 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-rust-500 border border-rust-500/30">
-                                <i class="fa-solid fa-skull-crossbones mr-1"></i> Extreme Trail
-                            </div>
-                            <div class="absolute bottom-4 left-4 bg-slate-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-xs font-semibold text-white">
-                                <i class="fa-solid fa-bolt text-amber-500 mr-1"></i> Shinku La Pass & Padum
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">Zanskar Wild & Uncharted</h3>
-                            <p class="text-slate-400 text-sm mt-2 line-clamp-2">Manali - Shinku La Pass - Padum - Gonbo Rangjon - Kargil - Leh</p>
-
-                            <!-- Tour Stats Row -->
-                            <div class="grid grid-cols-3 gap-2 my-6 p-3 rounded-xl bg-slate-900/80 text-center border border-white/5">
-                                <div>
-                                    <span class="block text-xs text-slate-400">Duration</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-calendar-days text-amber-400 text-xs"></i> 11 Days</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Distance</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-route text-amber-400 text-xs"></i> 1,350 KM</span>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">Max Altitude</span>
-                                    <span class="font-bold text-white text-sm sm:text-base"><i class="fa-solid fa-mountain text-amber-400 text-xs"></i> 16,580 FT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="px-6 pb-6 pt-0 flex gap-3">
-                        <button onclick="openItineraryModal('zanskar')" class="flex-1 py-3 rounded-xl card-blur border border-white/20 text-white font-bold text-sm hover:bg-white/10 transition-colors">
-                            <i class="fa-solid fa-list-ul mr-1 text-amber-400"></i> Day-by-Day Itinerary
-                        </button>
-                        <button onclick="prefillCalculator('Zanskar Wild & Uncharted')" class="px-5 py-3 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm hover:brightness-110 transition-all">
-                            Book / Quote
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Trip Planner & Live Cost Estimator -->
-    <section id="planner" class="py-24 relative bg-slate-900/80 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest"><i class="fa-solid fa-calculator mr-1"></i> Interactive Tool</span>
-                <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">Himalayan Trip Cost Estimator</h2>
-                <p class="text-slate-400 text-base mt-2">Configure your custom or group motorcycle expedition and receive an instant cost breakdown estimate.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                
-                <!-- Calculator Controls (Left Column) -->
-                <div class="lg:col-span-7 card-blur rounded-2xl p-6 sm:p-8">
-                    <form id="calculator-form" onsubmit="event.preventDefault();" class="space-y-6">
-                        
-                        <!-- Route Selection -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-200 mb-2">Select Preferred Expedition Route</label>
-                            <select id="calc-route" onchange="calculateTripCost()" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500">
-                                <option value="ladakh">The Great Ladakh & Nubra Circuit (8 Days)</option>
-                                <option value="pangong">Pangong Tso & Changthang Odyssey (10 Days)</option>
-                                <option value="spiti">Spiti Valley Off-Road Challenge (9 Days)</option>
-                                <option value="zanskar">Zanskar Wild & Uncharted (11 Days)</option>
-                            </select>
-                        </div>
-
-                        <!-- Motorcycle Selection -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-200 mb-2">Motorcycle Choice</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                <label class="cursor-pointer border border-white/10 rounded-xl p-3 text-center hover:border-amber-500/50 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10 transition-all">
-                                    <input type="radio" name="calc-bike" value="himalayan" checked onchange="calculateTripCost()" class="sr-only">
-                                    <i class="fa-solid fa-motorcycle text-amber-400 block text-lg mb-1"></i>
-                                    <span class="text-xs font-bold text-white block">RE Himalayan 450</span>
-                                    <span class="text-[10px] text-slate-400">Standard Expedition</span>
-                                </label>
-                                <label class="cursor-pointer border border-white/10 rounded-xl p-3 text-center hover:border-amber-500/50 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10 transition-all">
-                                    <input type="radio" name="calc-bike" value="bmw" onchange="calculateTripCost()" class="sr-only">
-                                    <i class="fa-solid fa-motorcycle text-amber-400 block text-lg mb-1"></i>
-                                    <span class="text-xs font-bold text-white block">BMW GS 850 / 1250</span>
-                                    <span class="text-[10px] text-slate-400">Premium ADV</span>
-                                </label>
-                                <label class="cursor-pointer border border-white/10 rounded-xl p-3 text-center hover:border-amber-500/50 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10 transition-all">
-                                    <input type="radio" name="calc-bike" value="own" onchange="calculateTripCost()" class="sr-only">
-                                    <i class="fa-solid fa-motorcycle text-amber-400 block text-lg mb-1"></i>
-                                    <span class="text-xs font-bold text-white block">Own Bike</span>
-                                    <span class="text-[10px] text-slate-400">Bring Your Machine</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Group Size Slider -->
-                        <div>
-                            <div class="flex justify-between text-sm font-semibold text-slate-200 mb-2">
-                                <span>Group Size (Riders)</span>
-                                <span id="group-size-val" class="text-amber-400 font-bold">5 Riders</span>
-                            </div>
-                            <input type="range" id="calc-riders" min="1" max="15" value="5" oninput="calculateTripCost()" class="w-full h-2 bg-slate-950 rounded-lg appearance-none cursor-pointer accent-amber-500">
-                            <div class="flex justify-between text-[10px] text-slate-500 mt-1">
-                                <span>1 Rider (Private Solo)</span>
-                                <span>5 Riders (Founders Size)</span>
-                                <span>15 Riders (Max Convoy)</span>
-                            </div>
-                        </div>
-
-                        <!-- Accommodation Level & Support -->
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-200 mb-2">Accommodation Level</label>
-                                <select id="calc-stay" onchange="calculateTripCost()" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500">
-                                    <option value="standard">Swiss Tents + 3★ Hotels</option>
-                                    <option value="luxury">Luxury Glamping Camps + 4★ Hotels</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-semibold text-slate-200 mb-2">Support Vehicle</label>
-                                <select id="calc-support" onchange="calculateTripCost()" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500">
-                                    <option value="included">4x4 Backup Vehicle + Medic (Included)</option>
-                                    <option value="private">Dedicated Private Van for Luggage</option>
-                                </select>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-
-                <!-- Instant Estimate Summary Card (Right Column) -->
-                <div class="lg:col-span-5 card-blur rounded-2xl p-6 sm:p-8 border-2 border-amber-500/30 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
-                            <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">Estimated Cost Breakdown</span>
-                            <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 text-xs font-bold">Live Calculation</span>
-                        </div>
-
-                        <!-- Cost Itemizations -->
-                        <div class="space-y-3 text-sm">
-                            <div class="flex justify-between text-slate-300">
-                                <span>Route Duration:</span>
-                                <span id="summary-duration" class="font-bold text-white">8 Days / 7 Nights</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Per Rider Base Package:</span>
-                                <span id="summary-base-rate" class="font-bold text-white">₹38,500</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Group Savings Discount:</span>
-                                <span id="summary-discount" class="font-bold text-green-400">- ₹3,500</span>
-                            </div>
-                            <div class="flex justify-between text-slate-300">
-                                <span>Inclusions:</span>
-                                <span class="font-semibold text-amber-400">Fuel, Stay, Meals, Permits, Medic</span>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-white/10 mt-6 pt-6 text-center">
-                            <span class="text-xs uppercase text-slate-400 tracking-wider block">Estimated Total (Per Rider)</span>
-                            <div class="font-heading text-5xl font-extrabold text-amber-400 my-1" id="total-price-display">₹35,000</div>
-                            <p class="text-[11px] text-slate-400">*Final pricing confirmed upon permit approval & exact date selection.</p>
-                        </div>
-                    </div>
-
-                    <button onclick="openBookingModal()" class="w-full mt-8 py-4 rounded-xl bg-gradient-to-r from-amber-500 to-rust-500 text-slate-950 font-extrabold text-base hover:brightness-110 transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i> Request Reserved Slot
-                    </button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Gear & Preparation Checklist -->
-    <section id="checklist" class="py-24 bg-slate-950 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest"><i class="fa-solid fa-clipboard-check mr-1"></i> Expedition Readiness</span>
-                <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">Essential Gear Checklist</h2>
-                <p class="text-slate-400 text-base">Himalayan weather changes in minutes. Interactive preparation guide curated by our 5 Founding Rangers.</p>
-            </div>
-
-            <!-- Interactive Tab System -->
-            <div class="max-w-4xl mx-auto">
-                <div class="flex flex-wrap justify-center gap-2 mb-8" id="checklist-tabs">
-                    <button onclick="switchTab('riding')" id="tab-riding" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 shadow-md">
-                        <i class="fa-solid fa-shield text-xs mr-1"></i> Riding Apparel
-                    </button>
-                    <button onclick="switchTab('thermal')" id="tab-thermal" class="px-5 py-2.5 rounded-xl font-bold text-sm card-blur text-slate-300 hover:text-white">
-                        <i class="fa-solid fa-snowflake text-xs mr-1"></i> Thermal & Cold Weather
-                    </button>
-                    <button onclick="switchTab('medical')" id="tab-medical" class="px-5 py-2.5 rounded-xl font-bold text-sm card-blur text-slate-300 hover:text-white">
-                        <i class="fa-solid fa-heart-pulse text-xs mr-1"></i> Altitude & Health
-                    </button>
-                    <button onclick="switchTab('spares')" id="tab-spares" class="px-5 py-2.5 rounded-xl font-bold text-sm card-blur text-slate-300 hover:text-white">
-                        <i class="fa-solid fa-screwdriver-wrench text-xs mr-1"></i> Motorcycle Tool Set
-                    </button>
-                </div>
-
-                <!-- Tab Contents -->
-                <div class="card-blur rounded-2xl p-6 sm:p-8">
-                    
-                    <!-- Riding Gear Content -->
-                    <div id="content-riding" class="space-y-4">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Riding Safety Gear Checklist</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" checked class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">ECE / DOT Certified Full-Face Helmet</span>
-                                    <span class="text-xs text-slate-400">Anti-fog visor or pinlock recommended for icy winds</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" checked class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">All-Weather Armored Riding Jacket</span>
-                                    <span class="text-xs text-slate-400">Level 2 CE armor with removable thermal inner lining</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Waterproof Riding Pants</span>
-                                    <span class="text-xs text-slate-400">Reinforced knee & hip guards</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Waterproof Riding Boots & Thermal Socks</span>
-                                    <span class="text-xs text-slate-400">Ankle protection for rocky stream crossings</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Thermal Content -->
-                    <div id="content-thermal" class="space-y-4 hidden">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Sub-Zero Thermal Layering Checklist</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Base-Layer Thermal Tops & Bottoms</span>
-                                    <span class="text-xs text-slate-400">Merino wool or synthetic moisture-wicking material</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Windproof Fleece Neck Gaiter & Balaclava</span>
-                                    <span class="text-xs text-slate-400">Shields throat and neck from freezing pass wind chill</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Dual-Layer Gloves</span>
-                                    <span class="text-xs text-slate-400">Inner thermal liner gloves + outer waterproof leather riding gloves</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Medical Content -->
-                    <div id="content-medical" class="space-y-4 hidden">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">AMS & Health Essentials</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" checked class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Diamox (Aciphen) AMS Tablets</span>
-                                    <span class="text-xs text-slate-400">Consult doctor before starting dosage at Leh altitude</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Personal Oxygen Canisters</span>
-                                    <span class="text-xs text-slate-400">Ranger backup truck carries big tanks; personal can for instant emergency</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Hydration Bladder (2-3 Liters)</span>
-                                    <span class="text-xs text-slate-400">Dehydration speeds up high altitude sickness</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Spares Content -->
-                    <div id="content-spares" class="space-y-4 hidden">
-                        <h3 class="text-lg font-bold text-white mb-4 border-b border-white/10 pb-2">Bike Spares (If Riding Own Motorcycle)</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Spare Clutch & Accelerator Cables</span>
-                                    <span class="text-xs text-slate-400">Pre-routed alongside existing cables for fast replacement</span>
-                                </div>
-                            </label>
-                            <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-900/60 hover:bg-slate-900 cursor-pointer">
-                                <input type="checkbox" class="w-5 h-5 accent-amber-500 rounded">
-                                <div>
-                                    <span class="text-sm font-semibold text-white block">Heavy Duty Inner Tubes & Puncture Repair Kit</span>
-                                    <span class="text-xs text-slate-400">Essential for remote riverbed rocks in Zanskar</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery & Trail Memories Section -->
-    <section id="gallery" class="py-24 bg-slate-900/50 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <span class="text-amber-400 font-bold text-xs uppercase tracking-widest"><i class="fa-solid fa-camera mr-1"></i> Visual Vault</span>
-                    <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">10 Years of Trail Memories</h2>
-                </div>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80', 'Riders conquering Khardung La Pass')">
-                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Trail" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-xs font-bold text-white"><i class="fa-solid fa-magnifying-glass-plus mr-1 text-amber-400"></i> Khardung La Summit</span>
-                    </div>
-                </div>
-
-                <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1200&q=80', 'Camping under stars at Pangong Lake')">
-                    <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80" alt="Pangong Lake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-xs font-bold text-white"><i class="fa-solid fa-magnifying-glass-plus mr-1 text-amber-400"></i> Pangong Campfire Night</span>
-                    </div>
-                </div>
-
-                <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=1200&q=80', 'Spiti River water crossing on motorcycle')">
-                    <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80" alt="River Crossing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-xs font-bold text-white"><i class="fa-solid fa-magnifying-glass-plus mr-1 text-amber-400"></i> Spiti River Crossing</span>
-                    </div>
-                </div>
-
-                <div class="relative rounded-xl overflow-hidden group h-64 border border-white/10 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80', 'Off-road track in Zanskar valley')">
-                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Zanskar Track" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                        <span class="text-xs font-bold text-white"><i class="fa-solid fa-magnifying-glass-plus mr-1 text-amber-400"></i> Zanskar Dirt Trail</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-slate-950 relative">
+    <section id="gallery" class="py-24 bg-darkslate">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-amber-400 font-bold text-xs uppercase tracking-widest">Rider Testimonials</span>
-                <h2 class="font-heading text-4xl sm:text-6xl font-bold text-white uppercase mt-1">Wall of Fame</h2>
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2 text-burntorange font-bold uppercase tracking-widest text-sm">
+                    <i class="fa-solid fa-camera"></i>
+                    <span>Visual Chronicles</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">Ranger Gallery</h2>
+                <p class="text-gray-400 font-light text-base sm:text-lg">
+                    Glimpses of dust, altitude, camaraderie, and machines braving the elements.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card-blur rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic">
-                            "Riding with the 5 founding Rangers was the best decision of my life. When my bike suffered an altitude clutch burn near Chang La, Karan had it fixed in 20 minutes flat!"
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">AK</div>
-                        <div>
-                            <span class="text-sm font-bold text-white block">Aditya Kapoor</span>
-                            <span class="text-xs text-slate-400">Ladakh Circuit 2024 Rider</span>
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-2xl group h-64 border border-gray-800">
+                    <img src="https://placehold.co/600x600/121619/ffffff?text=Mountain+Pass" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/121619/ffffff?text=Himalayan+Ranger'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Passing Khardung La Summit</span>
                     </div>
                 </div>
-
-                <div class="card-blur rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic">
-                            "The medical backup is real. Dr. Samar monitored our oxygen levels every evening at Pangong Lake. Complete peace of mind on extreme high altitudes."
-                        </p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">PS</div>
-                        <div>
-                            <span class="text-sm font-bold text-white block">Priya Sharma</span>
-                            <span class="text-xs text-slate-400">Pangong Odyssey Rider</span>
-                        </div>
+                <div class="relative overflow-hidden rounded-2xl group h-64 border border-gray-800">
+                    <img src="https://placehold.co/600x600/121619/ffffff?text=Campfire+Stories" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/121619/ffffff?text=Himalayan+Ranger'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Evening Campfire at 12,000 ft</span>
                     </div>
                 </div>
-
-                <div class="card-blur rounded-2xl p-6 flex flex-col justify-between">
-                    <div class="space-y-4">
-                        <div class="flex text-amber-400 gap-1 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-slate-300 text-sm leading-relaxed italic">
-                            "10 years of experience clearly shows. Every campsite was top tier, food was hot, and the brotherhood feeling in the evening campfire was unmatched."
-                        </p>
+                <div class="relative overflow-hidden rounded-2xl group h-64 border border-gray-800">
+                    <img src="https://placehold.co/600x600/121619/ffffff?text=River+Crossing" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/121619/ffffff?text=Himalayan+Ranger'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">Glacial Stream Crossing</span>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">MV</div>
-                        <div>
-                            <span class="text-sm font-bold text-white block">Marcus Vance</span>
-                            <span class="text-xs text-slate-400">Zanskar Expedition Rider</span>
-                        </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group h-64 border border-gray-800">
+                    <img src="https://placehold.co/600x600/121619/ffffff?text=Harpreet+Riding" alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x600/121619/ffffff?text=Himalayan+Ranger'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white font-semibold text-sm">On the Endless Horizon</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-white/10 py-12">
+    <section id="gear" class="py-24 bg-charcoal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                
-                <div class="md:col-span-2">
-                    <a href="#" class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-rust-600 flex items-center justify-center text-slate-950 text-xl font-black">
-                            <i class="fa-solid fa-compass"></i>
-                        </div>
-                        <span class="font-heading text-3xl font-bold tracking-wider text-white uppercase">Himalayan <span class="text-amber-500">Ranger</span></span>
-                    </a>
-                    <p class="text-slate-400 text-sm max-w-md mb-6">
-                        Founded in 2014 by 5 dedicated motorcycle wanderers. Leading safe, unforgettable, and raw motorcycling expeditions across Ladakh, Nubra, Pangong, Spiti, and Zanskar.
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2 text-amber font-bold uppercase tracking-widest text-sm">
+                    <i class="fa-solid fa-shield-cat"></i>
+                    <span>Survival & Mastery</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">Ranger Gear & Tips</h2>
+                <p class="text-gray-400 font-light text-base sm:text-lg">
+                    The mountains don't forgive mistakes. Here is essential wisdom from Harpreet Singh and veteran Rangers.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-darkslate border border-gray-800 space-y-4 shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-burntorange/20 text-burntorange flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-vest"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Armor & Protection</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        CE Level 2 certified jackets, knee guards, full-face adventure helmets with pinlock visors, and waterproof riding boots are non-negotiable.
                     </p>
-                    <div class="flex gap-4 text-slate-400">
-                        <a href="#" class="w-9 h-9 rounded-full card-blur flex items-center justify-center hover:text-amber-400 transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full card-blur flex items-center justify-center hover:text-amber-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full card-blur flex items-center justify-center hover:text-amber-400 transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full card-blur flex items-center justify-center hover:text-amber-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-darkslate border border-gray-800 space-y-4 shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-amber/20 text-amber flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-wrench"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-white">Machine Prep</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Reinforced crash guards, sump guards, heavy-duty inner tubes, puncture repair kits, and spare clutch/accelerator cables are mandatory.
+                    </p>
                 </div>
 
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4 uppercase tracking-wider">Quick Navigation</h4>
-                    <ul class="space-y-2 text-sm text-slate-400">
-                        <li><a href="#about" class="hover:text-amber-400 transition-colors">Our Origin Story</a></li>
-                        <li><a href="#founders" class="hover:text-amber-400 transition-colors">5 Founding Bikers</a></li>
-                        <li><a href="#expeditions" class="hover:text-amber-400 transition-colors">Ladakh & Nubra Trails</a></li>
-                        <li><a href="#planner" class="hover:text-amber-400 transition-colors">Trip Estimator</a></li>
-                        <li><a href="#checklist" class="hover:text-amber-400 transition-colors">High Altitude Gear Checklist</a></li>
-                    </ul>
+                <div class="p-8 rounded-2xl bg-darkslate border border-gray-800 space-y-4 shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-kit-medical"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Acclimatization</h3>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Hydrate constantly, avoid overexertion during the first 48 hours at high altitude, and keep Diamox handy under medical supervision.
+                    </p>
                 </div>
-
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4 uppercase tracking-wider">Base Basecamp Contact</h4>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-amber-500 mt-1"></i>
-                            <span>Fort Road, Leh, Union Territory of Ladakh, 194101</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-amber-500"></i>
-                            <span>+91 98765 43210 / +91 98123 45678</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-amber-500"></i>
-                            <span>ride@himalayanranger.com</span>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
+        </div>
+    </section>
 
-            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-                <p>© 2014 - 2026 Himalayan Ranger Motorcycling Club. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-slate-400">Safety Policy</a>
-                    <a href="#" class="hover:text-slate-400">Permit Guidelines</a>
-                    <a href="#" class="hover:text-slate-400">Terms of Expedition</a>
+    <section id="contact" class="py-24 bg-darkslate relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-charcoal p-8 sm:p-12 rounded-3xl border border-gray-800 shadow-2xl">
+                <div class="text-center space-y-4 mb-10">
+                    <div class="inline-flex items-center space-x-2 text-burntorange font-bold uppercase tracking-widest text-sm">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Enlist Today</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">Join The Himalayan Ranger</h2>
+                    <p class="text-gray-400 font-light text-sm sm:text-base">
+                        Fill out the details below to ride with Harpreet Singh and the club on our upcoming expeditions.
+                    </p>
                 </div>
+
+                <form id="join-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Full Name</label>
+                            <input type="text" required placeholder="e.g. Vikram Malhotra" class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Email Address</label>
+                            <input type="email" required placeholder="vikram@example.com" class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Phone Number / WhatsApp</label>
+                            <input type="tel" required placeholder="+91 98765 43210" class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Your Motorcycle Model</label>
+                            <input type="text" required placeholder="e.g. Royal Enfield Himalayan 450" class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Preferred Expedition</label>
+                        <select class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors">
+                            <option>Ladakh Khardung La & Pangong Odyssey</option>
+                            <option>Spiti Valley Cold Desert Circuit</option>
+                            <option>Zanskar Gorge & Padum Trail</option>
+                            <option>General Club Membership Only</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase font-bold text-gray-300 mb-2">Riding Experience & Motivation</label>
+                        <textarea rows="4" placeholder="Tell us about your previous long-rides and why you want to ride with Himalayan Ranger..." class="w-full px-4 py-3 rounded-xl bg-darkslate border border-gray-700 text-white focus:outline-none focus:border-burntorange transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-burntorange hover:bg-amber text-white font-bold text-base uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal border-t border-gray-800 py-12 text-gray-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-burntorange flex items-center justify-center text-white font-black text-sm">
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>
+                <span class="text-white font-black tracking-wider uppercase">Himalayan Ranger</span>
+            </div>
+            <p class="text-xs text-center md:text-left">
+                &copy; 2026 Himalayan Ranger Motorcycle Club. Founded by Harpreet Singh & Friends. All Rights Reserved.
+            </p>
+            <div class="flex space-x-4 text-lg">
+                <a href="#" class="hover:text-burntorange transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-burntorange transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-burntorange transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-burntorange transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- ITINERARY MODAL -->
-    <div id="itinerary-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="card-blur bg-slate-900 border border-white/20 rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
-            <!-- Modal Header -->
-            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-slate-950">
-                <div>
-                    <span class="text-amber-400 font-bold text-xs uppercase" id="modal-subtitle">Day-by-Day Route Breakdown</span>
-                    <h3 class="text-2xl font-bold text-white font-heading tracking-wide uppercase" id="modal-title">Ladakh Circuit</h3>
-                </div>
-                <button onclick="closeItineraryModal()" class="text-slate-400 hover:text-white text-2xl font-bold">&times;</button>
+    <!-- Booking Modal / Message Box -->
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden">
+        <div class="bg-darkslate border border-gray-700 p-8 rounded-2xl max-w-md w-full mx-4 text-center space-y-4 shadow-2xl">
+            <div class="w-16 h-16 rounded-full bg-burntorange/20 text-burntorange flex items-center justify-center mx-auto text-2xl font-bold">
+                <i class="fa-solid fa-check"></i>
             </div>
-            
-            <!-- Modal Body (Itinerary Steps) -->
-            <div class="p-6 overflow-y-auto space-y-4" id="modal-itinerary-list">
-                <!-- Injected via JavaScript -->
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-white/10 bg-slate-950 flex justify-end gap-3">
-                <button onclick="closeItineraryModal()" class="px-5 py-2.5 rounded-xl text-slate-300 hover:text-white text-sm font-semibold">Close</button>
-                <button onclick="closeItineraryModal(); prefillCalculator('Selected Circuit')" class="px-5 py-2.5 rounded-xl bg-amber-500 text-slate-950 text-sm font-extrabold hover:brightness-110">Book This Route</button>
-            </div>
+            <h3 id="modal-title" class="text-2xl font-black text-white uppercase">Application Received!</h3>
+            <p id="modal-text" class="text-gray-300 text-sm font-light">
+                Welcome to the brotherhood. Harpreet Singh and the Ranger team will review your application and reach out via WhatsApp/Phone shortly.
+            </p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-burntorange hover:bg-amber text-white font-semibold text-sm transition-all shadow-md">
+                Got It
+            </button>
         </div>
     </div>
 
-    <!-- BOOKING / INQUIRY MODAL -->
-    <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="card-blur bg-slate-900 border border-white/20 rounded-2xl max-w-md w-full p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-6">
-                <div>
-                    <h3 class="text-2xl font-bold text-white font-heading uppercase">Reserve Expedition Slot</h3>
-                    <p class="text-xs text-slate-400">Speak directly with one of our 5 Founding Rangers</p>
-                </div>
-                <button onclick="closeBookingModal()" class="text-slate-400 hover:text-white text-2xl font-bold">&times;</button>
-            </div>
-
-            <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Full Name</label>
-                    <input type="text" required placeholder="e.g. Vikramaditya Rathore" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Phone / WhatsApp Number</label>
-                    <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Preferred Month</label>
-                    <select class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500">
-                        <option>June 2025</option>
-                        <option>July 2025</option>
-                        <option>August 2025</option>
-                        <option>September 2025</option>
-                        <option>June 2026</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Custom Notes / Questions</label>
-                    <textarea rows="3" placeholder="Tell us about your riding experience or group requests..." class="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-amber-500"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:brightness-110 transition-all mt-2">
-                    Submit Inquiry
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md" onclick="closeLightbox()">
-        <div class="relative max-w-4xl w-full text-center" onclick="event.stopPropagation()">
-            <img id="lightbox-img" src="" alt="Gallery Lightbox" class="max-h-[80vh] mx-auto rounded-xl shadow-2xl border border-white/20">
-            <p id="lightbox-caption" class="text-amber-400 font-bold text-sm mt-4"></p>
-            <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-amber-400">&times;</button>
-        </div>
-    </div>
-
-    <!-- JavaScript Logic -->
+    <!-- JavaScript Interactive Logic -->
     <script>
-        // Sample Itinerary Data
-        const itineraries = {
-            ladakh: {
-                title: "The Great Ladakh & Nubra Circuit",
-                subtitle: "8 Days / 7 Nights • Max Altitude: 17,982 FT",
-                days: [
-                    { day: "Day 01", title: "Arrival in Leh & Acclimatization", desc: "Mandatory rest day in Leh (11,500 ft) for high-altitude oxygen level adaptation. Briefing session with Trail Captain Bikram." },
-                    { day: "Day 02", title: "Leh Local Warm-up Ride (Magnetic Hill & Sangam)", desc: "Ride along the Indus River to Sangam confluence and test bikes at Magnetic Hill." },
-                    { day: "Day 03", title: "Leh to Nubra Valley via Khardung La Pass", desc: "Ascend the legendary Khardung La Pass (17,982 ft). Descend into Nubra Valley sand dunes at Hunder." },
-                    { day: "Day 04", title: "Hunder to Turtuk Village (Balti Culture)", desc: "Ride along the Shyok River to India's northernmost border village, Turtuk." },
-                    { day: "Day 05", title: "Nubra Valley to Pangong Tso via Shyok River route", desc: "Off-road water stream crossings through the wild Shyok riverbed to Pangong Lake." },
-                    { day: "Day 06", title: "Pangong Tso Sunrise & Return to Leh via Chang La", desc: "Early morning photography at Pangong Lake (13,862 ft), then climb Chang La Pass (17,590 ft)." },
-                    { day: "Day 07", title: "Leh Monastery Trail & Farewell Dinner", desc: "Explore Thiksey Monastery and celebrate expedition completion at basecamp campfire." },
-                    { day: "Day 08", title: "Fly Back / Departure", desc: "Transfer to Leh Airport with unforgettable memories and Ranger badges." }
-                ]
-            },
-            pangong: {
-                title: "Pangong Tso & Changthang Odyssey",
-                subtitle: "10 Days / 9 Nights • Max Altitude: 17,590 FT",
-                days: [
-                    { day: "Day 01-02", title: "Leh Arrival & Acclimatization Ride", desc: "Rest and local acclimatization rides around Hall of Fame & Magnetic Hill." },
-                    { day: "Day 03-04", title: "Khardung La Pass to Nubra Valley", desc: "Cross Khardung La, stay at double-hump camel sand dunes at Hunder." },
-                    { day: "Day 05-06", title: "Pangong Tso to Hanle Dark Sky Reserve", desc: "Ride along the remote border roads to Hanle. Stargazing at the high-altitude optical observatory." },
-                    { day: "Day 07-08", title: "Hanle to Tso Moriri Lake", desc: "Off-road across Changthang plateau wild lands to pristine Tso Moriri lake." },
-                    { day: "Day 09-10", title: "Tanglang La Pass Return to Leh", desc: "Conquer Tanglang La (17,582 ft) and wrap up the grand circuit in Leh." }
-                ]
-            },
-            spiti: {
-                title: "Spiti Valley Off-Road Challenge",
-                subtitle: "9 Days / 8 Nights • Max Altitude: 15,060 FT",
-                days: [
-                    { day: "Day 01", title: "Shimla to Rampur Bushahr", desc: "Start from lush green Shimla winding hills down to Sutlej River valley." },
-                    { day: "Day 02", title: "Rampur to Kalpa (Kinnu Kailash View)", desc: "Ride through Taranda Dhank cliff-cut hanging roads into Kinnaur." },
-                    { day: "Day 03", title: "Kalpa to Nako & Tabo Monastery", desc: "Transition from pine forests to cold desert landscape of Spiti Valley." },
-                    { day: "Day 04", title: "Tabo to Kaza via Dhankar Gompa", desc: "Explore 1,000-year-old cliffhanging monasteries and high altitude bridges." },
-                    { day: "Day 05", title: "Kaza Local High Villages (Hikkim, Komic, Langza)", desc: "Visit the world's highest post office at Hikkim (14,567 ft)." },
-                    { day: "Day 06", title: "Kaza to Chandratal Lake via Kunzum La", desc: "Conquer rugged Kunzum Pass (15,060 ft) and camp near the Moon Lake." },
-                    { day: "Day 07-09", title: "Chandratal to Manali via Atal Tunnel", desc: "Navigate river boulder beds of Batal & Gramphu to reach Manali." }
-                ]
-            },
-            zanskar: {
-                title: "Zanskar Wild & Uncharted",
-                subtitle: "11 Days / 10 Nights • Max Altitude: 16,580 FT",
-                days: [
-                    { day: "Day 01", title: "Manali to Jispa via Atal Tunnel", desc: "Enter Lahaul valley and camp along the Bhaga River." },
-                    { day: "Day 02", title: "Jispa to Padum via Shinku La Pass", desc: "Cross the newly opened Shinku La Pass (16,580 ft) into Zanskar." },
-                    { day: "Day 03-05", title: "Exploring Padum, Karsha & Phugtal Monastery", desc: "Raw off-road trekking and riding to the ancient cliffside Phugtal Gompa." },
-                    { day: "Day 06-08", title: "Padum to Kargil via Penzi La Pass", desc: "Ride past Drang-Drung Glacier and massive snow peaks." },
-                    { day: "Day 09-11", title: "Kargil to Leh via Fotu La & Lamayuru", desc: "Ride through Moonland Lamayuru landscape into Leh valley." }
-                ]
-            }
-        };
-
         // Mobile Menu Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => {
+
+        mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
         // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
         });
 
-        // Itinerary Modal Logic
-        function openItineraryModal(routeKey) {
-            const data = itineraries[routeKey];
-            if (!data) return;
-
-            document.getElementById('modal-title').innerText = data.title;
-            document.getElementById('modal-subtitle').innerText = data.subtitle;
-
-            const container = document.getElementById('modal-itinerary-list');
-            container.innerHTML = '';
-
-            data.days.forEach(item => {
-                const dayCard = document.createElement('div');
-                dayCard.className = 'p-4 rounded-xl bg-slate-950 border border-white/5 space-y-1';
-                dayCard.innerHTML = `
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">${item.day}</span>
-                        <h4 class="text-white font-bold text-sm">${item.title}</h4>
-                    </div>
-                    <p class="text-xs text-slate-400 pl-1 leading-relaxed">${item.desc}</p>
-                `;
-                container.appendChild(dayCard);
-            });
-
-            const modal = document.getElementById('itinerary-modal');
-            modal.classList.remove('hidden');
-            document.body.classList.add('modal-active');
-        }
-
-        function closeItineraryModal() {
-            document.getElementById('itinerary-modal').classList.add('hidden');
-            document.body.classList.remove('modal-active');
-        }
-
-        // Live Trip Calculator Logic
-        function calculateTripCost() {
-            const route = document.getElementById('calc-route').value;
-            const bike = document.querySelector('input[name="calc-bike"]:checked').value;
-            const riders = parseInt(document.getElementById('calc-riders').value);
-            const stay = document.getElementById('calc-stay').value;
-
-            document.getElementById('group-size-val').innerText = `${riders} ${riders === 1 ? 'Rider' : 'Riders'}`;
-
-            let baseCost = 35000;
-            let durationStr = "8 Days / 7 Nights";
-
-            if (route === 'ladakh') { baseCost = 38500; durationStr = "8 Days / 7 Nights"; }
-            else if (route === 'pangong') { baseCost = 48000; durationStr = "10 Days / 9 Nights"; }
-            else if (route === 'spiti') { baseCost = 42000; durationStr = "9 Days / 8 Nights"; }
-            else if (route === 'zanskar') { baseCost = 54000; durationStr = "11 Days / 10 Nights"; }
-
-            // Bike modifier
-            if (bike === 'bmw') baseCost += 22000;
-            if (bike === 'own') baseCost -= 12000;
-
-            // Stay modifier
-            if (stay === 'luxury') baseCost += 10000;
-
-            // Group discount for 5 or more riders (Founding size)
-            let discount = 0;
-            if (riders >= 5) {
-                discount = Math.round(baseCost * 0.08);
+        // Modal Handling
+        function openModal(expeditionName = '') {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalText = document.getElementById('modal-text');
+            
+            if (expeditionName) {
+                modalTitle.innerText = "Expedition Slot Request";
+                modalText.innerText = `You are requesting a slot for the "${expeditionName}". Harpreet Singh & the Ranger team will contact you with itinerary & preparation details.`;
+            } else {
+                modalTitle.innerText = "Application Received!";
+                modalText.innerText = "Welcome to the brotherhood. Harpreet Singh and the Ranger team will review your application and reach out via WhatsApp/Phone shortly.";
             }
-
-            const finalCost = baseCost - discount;
-
-            document.getElementById('summary-duration').innerText = durationStr;
-            document.getElementById('summary-base-rate').innerText = `₹${baseCost.toLocaleString('en-IN')}`;
-            document.getElementById('summary-discount').innerText = discount > 0 ? `- ₹${discount.toLocaleString('en-IN')}` : '₹0';
-            document.getElementById('total-price-display').innerText = `₹${finalCost.toLocaleString('en-IN')}`;
+            modal.classList.remove('hidden');
         }
 
-        function prefillCalculator(routeName) {
-            const select = document.getElementById('calc-route');
-            if (routeName.includes('Ladakh')) select.value = 'ladakh';
-            else if (routeName.includes('Pangong')) select.value = 'pangong';
-            else if (routeName.includes('Spiti')) select.value = 'spiti';
-            else if (routeName.includes('Zanskar')) select.value = 'zanskar';
-
-            calculateTripCost();
-            document.getElementById('planner').scrollIntoView({ behavior: 'smooth' });
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
         }
 
-        // Checklist Tab Switching
-        function switchTab(tabKey) {
-            ['riding', 'thermal', 'medical', 'spares'].forEach(k => {
-                const btn = document.getElementById(`tab-${k}`);
-                const content = document.getElementById(`content-${k}`);
-
-                if (k === tabKey) {
-                    btn.className = "px-5 py-2.5 rounded-xl font-bold text-sm bg-amber-500 text-slate-950 shadow-md";
-                    content.classList.remove('hidden');
-                } else {
-                    btn.className = "px-5 py-2.5 rounded-xl font-bold text-sm card-blur text-slate-300 hover:text-white";
-                    content.classList.add('hidden');
-                }
-            });
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            openModal();
+            event.target.reset();
         }
 
-        // Booking Modal Logic
-        function openBookingModal() {
-            document.getElementById('booking-modal').classList.remove('hidden');
-            document.body.classList.add('modal-active');
-        }
-
-        function closeBookingModal() {
-            document.getElementById('booking-modal').classList.add('hidden');
-            document.body.classList.remove('modal-active');
-        }
-
-        function handleBookingSubmit(e) {
-            e.preventDefault();
-            alert("Ranger Basecamp Received Your Request! One of our 5 Founding Bikers will reach out via Phone/WhatsApp within 4 hours.");
-            closeBookingModal();
-        }
-
-        // Gallery Lightbox
-        function openLightbox(imgSrc, caption) {
-            document.getElementById('lightbox-img').src = imgSrc;
-            document.getElementById('lightbox-caption').innerText = caption;
-            document.getElementById('lightbox-modal').classList.remove('hidden');
-            document.body.classList.add('modal-active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').classList.add('hidden');
-            document.body.classList.remove('modal-active');
-        }
-
-        // Initialize Calculator Default State
-        window.onload = function() {
-            calculateTripCost();
-        };
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-xl', 'bg-charcoal/95');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
     </script>
 </body>
 </html>
